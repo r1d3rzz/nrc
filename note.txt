@@ -1,0 +1,5 @@
+NRC API
+
+https://nrc-data.onrender.com/nrcTownships
+https://nrc-data.onrender.com/nrcStates
+https://nrc-data.onrender.com/nrcTypes

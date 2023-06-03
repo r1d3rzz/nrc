@@ -1,18 +1,38 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home row">
+    <div class="col-md-10 mx-auto">
+      <div v-if="nrc.length">
+        <div class="card">
+          <div class="card-body">
+            <NrcStatesLIsts :nrcStates="nrc" />
+          </div>
+        </div>
+      </div>
+      <div v-else>
+        <div class="card">
+          <div class="card-body">
+            <div>loading...</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import NrcStatesLIsts from "../components/states/NrcStatesLIsts";
+import getsNrc from "@/composable/getsNrc";
 
 export default {
-  name: 'HomeView',
   components: {
-    HelloWorld
-  }
-}
+    NrcStatesLIsts,
+  },
+  setup() {
+    let { nrc, load, error } = getsNrc();
+
+    load("states");
+
+    return { nrc, error };
+  },
+};
 </script>
