@@ -1,10 +1,15 @@
 <template>
-  <div class="fs-4 mb-3 text-primary">NRC States</div>
+  <div class="mb-3">
+    <div class="fs-4 text-primary">
+      NRC States <br />
+      <small class="text-muted">Total ({{ nrcStates.length }})</small>
+    </div>
+  </div>
   <table class="table">
     <thead>
       <tr>
         <th scope="col">Code</th>
-        <th scope="col">Number</th>
+        <th scope="col">State Code</th>
         <th scope="col">Name</th>
         <th scope="col">Detail</th>
       </tr>
